@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class, //bo sung form https://laravelcollective.com/docs/master/html
+
+
     ],
 
     /*
@@ -223,6 +226,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Form' => Collective\Html\FormFacade::class, //bo sung form https://laravelcollective.com/docs/master/html
+        'Html' => Collective\Html\HtmlFacade::class, //bo sung form https://laravelcollective.com/docs/master/html
 
     ],
 

@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 //post
 Route::get('/post/index','PostController@Index');
-Route::post('/post/add','PostController@Add');
+Route::get('/post/add','PostController@Add');
+Route::post('/post/add','PostController@AddProccess');
 //end post
 
 Route::resource('product','ProductController');
