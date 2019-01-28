@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Post;
 
 class PostController extends Controller
 {
     public function Index(){
-        return View("post.index");
+        $all_product = Post::all();
+        return View("post.index",[
+            'all_product'=>$all_product
+        ]);
     }
     //get
     public function Add(){
@@ -25,10 +29,20 @@ class PostController extends Controller
     //post
     public function AddProccess(Request $request){
         //lay form value
-        $email = $request->get('email');
-        $category = $request->get('category');
-        var_dump($request->has('email'));
-        var_dump($request->has('email'));
-        //return redirect("post/index");
+        $title = $request->get('title');
+        $content = $request->get('content');
+        $category_id = $request->get('category_id');
+        $description = $request->get('description');
+
+        $post = new Post();
+        $post->content = $content;
+        $post->title = $title;
+        $post->category_id = $category_id;
+        $post->description = $description;
+        //var_dump($post->save());
+        $post->save();
+        return redirect("post/index");
     }
+
+    
 }
