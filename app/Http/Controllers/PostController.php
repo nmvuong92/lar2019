@@ -14,7 +14,7 @@ class PostController extends Controller
             'all_product'=>$all_product
         ]);
     }
-    //get
+    //@get
     public function Add(){
         $all_category = [
             1=>'Cat 1',
@@ -26,7 +26,7 @@ class PostController extends Controller
         ];
         return View("post.add",$view_data);
     }
-    //post
+    //@post
     public function AddProccess(Request $request){
         //lay form value
         $title = $request->get('title');
@@ -44,5 +44,15 @@ class PostController extends Controller
         return redirect("post/index");
     }
 
-    
+    //@delete
+    public function DeleteProccess($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect("post/index");
+    }
+
+    //@get
+    public function Update($id){
+
+    }
 }
