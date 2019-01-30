@@ -9,6 +9,7 @@
             <th>Title</th>
             <th>Description</th>
             <th>Content</th>
+            <th>Category id</th>
             <th>Command</th>
         </tr>
     </thead>
@@ -19,8 +20,9 @@
                 <td>{{ $row->title }}</td>
                 <td>{{ $row->description }}</td>
                 <td>{{ $row->content }}</td>
+                <td>{{ $row->category_id }}</td>
                 <td>
-                    <a href="{{ url('items/'.$row->id.'/edit') }}">Edit</a> | 
+                    <a href="{{ url('post/update/'.$row->id) }}">Edit</a> | 
                     {{ Form::open(['url'=>'post/'.$row->id, 'method' => 'delete', 'onsubmit'=>'return confirm("Are you sure?");']) }}
                         <button type="submit">Delete</button>
                     {{ Form::close() }}

@@ -53,6 +53,26 @@ class PostController extends Controller
 
     //@get
     public function Update($id){
-
+        $post = Post::find($id);
+        $all_category = [
+            1=>'Cat 1',
+            2=>'Cat 2',
+            3=>'Cat 3',
+        ];
+        return View("post.update",[
+            'post' => $post,
+            'all_category'=>$all_category
+        ]);
+    }
+    //@put
+    public function UpdateProccess(Request $request){
+        //var_dump($request->all());
+        $post = Post::find($request->get("id"));
+        $post->title=$request->get("title");
+        $post->description=$request->get("description");
+        $post->content=$request->get("content");
+        $post->category_id=$request->get("category_id");
+        $post->save();
+        return redirect("post/index");
     }
 }

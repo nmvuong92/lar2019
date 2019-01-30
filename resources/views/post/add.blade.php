@@ -10,7 +10,7 @@
     {{ Form::text('content', '') }}
     <br/>
     {{ Form::label('category_id','category_id') }}
-    {{ Form::select('category_id',$all_category,'2') }}
+    {{ Form::select('category_id',$all_category) }}
     <br/>
     {{ Form::submit('Click Me!') }}
 {{ Form::close() }}
