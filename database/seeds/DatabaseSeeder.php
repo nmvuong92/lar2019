@@ -12,5 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        //* liệt kê danh sách các seeder sẽ chạy
+        $this->call([
+            PartientsTableSeeeder::class,
+            CategorySeeder::class
+        ]); 
     }
 }

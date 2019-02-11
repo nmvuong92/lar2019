@@ -1,5 +1,5 @@
 <h1>Add new post</h1>
-{{ Form::open(array('url' => 'post/add','method'=>'post')) }}
+{{ Form::open(['url' => 'post/add','method'=>'post']) }}
     {{ Form::label('title', '')}}
     {{ Form::text('title', '') }}
     <br/>
