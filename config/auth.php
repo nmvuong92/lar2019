@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        //thêm mới admins
+        'admins'=>[
+            'driver' => 'session', //trình điều khiển
+            'provider' => 'admins' //cung cấp bởi? thêm mới định nghĩa trong Providers `admins` ở dưới
+        ]
     ],
 
     /*
@@ -74,6 +79,10 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        'admins' => [
+            'driver' => 'eloquent', // lớp trừu tượng để tương tác tới csdl của chúng ta
+            'model' => App\Admin::class //tên class model ứng với bảng trong csdl
+        ]
     ],
 
     /*
@@ -97,6 +106,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        //thêm cho phần admins
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ]
     ],
 
 ];
