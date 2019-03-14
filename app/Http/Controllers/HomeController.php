@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //vuong fix
         return view('home');
     }
 }
