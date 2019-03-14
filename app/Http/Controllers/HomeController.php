@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         //vuong fix
+        //master fix
         return view('home');
     }
 }
